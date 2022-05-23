@@ -94,17 +94,17 @@ namespace Lights
                 {
                     if (config.Presets.PerZone.TryTriggerPreset(id))
                     {
-                        Log.Debug($"Automatically ran initial zone preset: \"{id}\"", config.Debug);
+                        Log.Debug($"自动运行初始区域预设： \"{id}\"", config.Debug);
                         yield return Timing.WaitForSeconds(Random.Range(config.Presets.TimeBetweenMin, config.Presets.TimeBetweenMax));
                     }
                     else if (config.Presets.PerRoom.TryTriggerPreset(id))
                     {
-                        Log.Debug($"Automatically ran initial room preset: \"{id}\"", config.Debug);
+                        Log.Debug($"自动运行初始房间预设： \"{id}\"", config.Debug);
                         yield return Timing.WaitForSeconds(Random.Range(config.Presets.TimeBetweenMin, config.Presets.TimeBetweenMax));
                     }
                     else
                     {
-                        Log.Error($"Couldn't find any presets with ID \"{id}\", make sure there's no typos.");
+                        Log.Error($"找不到为ID的任何预设 \"{id}\", 确保没有拼写错误。");
                     }
                 }
             }
@@ -125,11 +125,11 @@ namespace Lights
                 }
 
                 if (config.Presets.PerZone.TryTriggerPreset(id))
-                    Log.Debug($"Automatically ran zone preset: \"{id}\"", config.Debug);
+                    Log.Debug($"自动运行区域预设：\"{id}\"", config.Debug);
                 else if (config.Presets.PerRoom.TryTriggerPreset(id))
-                    Log.Debug($"Automatically ran room preset: \"{id}\"", config.Debug);
+                    Log.Debug($"自动运行房间预设： \"{id}\"", config.Debug);
                 else
-                    Log.Error($"Couldn't find any presets with ID \"{id}\", make sure there's no typos.");
+                    Log.Error($"找不到为ID的任何预设 \"{id}\", 确保没有拼写错误。");
 
                 yield return Timing.WaitForSeconds(Random.Range(config.Presets.TimeBetweenMin, config.Presets.TimeBetweenMax));
             }

@@ -17,25 +17,25 @@ namespace Lights.Configs
         /// <summary>
         /// Gets or sets the main command name.
         /// </summary>
-        [Description("The main command's name.")]
+        [Description("主命令的名称。")]
         public string Name { get; set; } = "lightsre";
 
         /// <summary>
         /// Gets or sets all accepted command aliases.
         /// </summary>
-        [Description("The main command's aliases.")]
+        [Description("主命令的别名。")]
         public string[] Aliases { get; set; } = { "lights", "lre", "ls" };
 
         /// <summary>
         /// Gets or sets the command description.
         /// </summary>
-        [Description("The main command's description.")]
-        public string Description { get; set; } = "Modifies a room/zone's lights depending on your input, or using a pre-made preset!";
+        [Description("主命令的描述。")]
+        public string Description { get; set; } = "根据您的输入或使用预设修改房间/分区的灯光！";
 
         /// <summary>
         /// Gets or sets the command usage info.
         /// </summary>
-        [Description("The main command's usage info.")]
+        [Description("主命令的使用信息。")]
         public string[] Usage { get; set; } = { "PresetID" };
     }
 }

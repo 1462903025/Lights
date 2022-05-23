@@ -19,25 +19,25 @@ namespace Lights.Configs
         /// <summary>
         /// Gets or sets a value indicating whether Cassie should announce when the lights are affected.
         /// </summary>
-        [Description("Indicates whether Cassie should announce when the lights are affected.")]
+        [Description("指示Cassie是否应在灯光受到影响时宣布。")]
         public bool DoCassieMessages { get; set; } = true;
 
         /// <summary>
         /// Gets or sets a value indicating whether the cassie announcement should be held.
         /// </summary>
-        [Description("Indicates whether the cassie announcement should be held.")]
+        [Description("指示是否应举行 cassie 公告。")]
         public bool MakeHold { get; set; } = false;
 
         /// <summary>
         /// Gets or sets a value indicating whether the cassie announcement should have background noise.
         /// </summary>
-        [Description("Indicates whether the cassie announcement should have background noise.")]
+        [Description("指示 cassie 公告是否应有背景噪音。")]
         public bool MakeNoise { get; set; } = false;
 
         /// <summary>
         /// Gets or sets what cassie says when a preset is used.
         /// </summary>
-        [Description("What Cassie says depending on which preset was used. (%ss = effect duration)")]
+        [Description("cassie所说的取决于所使用的预设。（%ss=影响持续时间）")]
         public Dictionary<string, string> Messages { get; set; } = new Dictionary<string, string>()
         {
             { "myZonePreset1", "generator .g3 malfunction detected .g4 .g3 .g3 .g4" },

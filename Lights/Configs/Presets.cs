@@ -19,61 +19,61 @@ namespace Lights.Configs
         /// <summary>
         /// Gets or sets a value indicating whether presets will be able to be executed.
         /// </summary>
-        [Description("Whether presets system is enabled.")]
+        [Description("是否启用预设系统。")]
         public bool AreEnabled { get; set; } = false;
 
         /// <summary>
         /// Gets or sets a value indicating whether presets will be ran in random order.
         /// </summary>
-        [Description("Whether presets will be ran in random order.")]
+        [Description("是否以随机顺序运行预设。")]
         public bool RandomOrder { get; set; } = true;
 
         /// <summary>
         /// Gets or sets a value indicating whether running presets through a command requires a specific permission for it.
         /// </summary>
-        [Description("Whether running presets through a command requires a specific permission for it")]
+        [Description("通过命令运行预设是否需要特定权限")]
         public bool SpecificPermissionsRequired { get; set; } = false;
 
         /// <summary>
         /// Gets or sets how many times this plugin will loop through the preset order.
         /// </summary>
-        [Description("How many times this plugin will loop through the preset order.")]
+        [Description("这个插件将在预设顺序中循环多少次。")]
         public uint LoopCount { get; set; } = 5;
 
         /// <summary>
         /// Gets or sets the minimum amount of time that will pass until next preset is ran.
         /// </summary>
-        [Description("The minimum amount of time that will pass until next preset is ran.")]
+        [Description("运行下一个预设之前的最短时间。")]
         public float TimeBetweenMin { get; set; } = 55;
 
         /// <summary>
         /// Gets or sets the maximum amount of time that might pass until next preset is ran.
         /// </summary>
-        [Description("The maximum amount of time that might pass until next preset is ran.")]
+        [Description("运行下一个预设之前可能经过的最长时间。")]
         public float TimeBetweenMax { get; set; } = 82;
 
         /// <summary>
         /// Gets or sets the minimum amount of time until presets begin getting looped through.
         /// </summary>
-        [Description("The delay until the plugin begins going through the presets.")]
+        [Description("插件开始执行预设之前的延迟。")]
         public float InitialDelay { get; set; } = 32;
 
         /// <summary>
         /// Gets or sets a list of presets, one of which will be selected as the first preset ran, taking from <see cref="PerZone"/> and <see cref="PerRoom"/>.
         /// </summary>
-        [Description("One of the presets listed here will be randomly selected to be the first preset ran. (Starting a line with \"!\" will make it be ignored, use this if you don't wanna use this system)")]
+        [Description("将随机选择此处列出的其中一个预设作为第一个预设运行 (以 \"!\" 开头的行将被忽略，如果不想使用此系统，请使用此行）")]
         public string[] InitialPreset { get; set; } = { "!ignore", "!ignored2" };
 
         /// <summary>
         /// Gets or sets the order on which presets will be ran, taking from <see cref="PerZone"/> and <see cref="PerRoom"/>.
         /// </summary>
-        [Description("The order on which presets will be ran.")]
+        [Description("运行预设的顺序。")]
         public string[] Order { get; set; } = { "myZonePreset2", "myRoomPreset1", "myRoomPreset2", };
 
         /// <summary>
         /// Gets or sets a dictionary containing all <see cref="ZoneType"/>-exclusive presets.
         /// </summary>
-        [Description("Zone presets, this will only accept a ZoneType. (List of ZoneTypes: https://github.com/Exiled-Team/EXILED/blob/master/Exiled.API/Enums/ZoneType.cs )")]
+        [Description("区域预设，这将只接受区域类型。 (分区类型列表： https://github.com/Exiled-Team/EXILED/blob/master/Exiled.API/Enums/ZoneType.cs )")]
         public Dictionary<string, Preset<ZoneType>[]> PerZone { get; set; } = new Dictionary<string, Preset<ZoneType>[]>()
         {
             {
@@ -97,7 +97,7 @@ namespace Lights.Configs
         /// <summary>
         /// Gets or sets a dictionary containing all <see cref="RoomType"/>-exclusive presets.
         /// </summary>
-        [Description("Room presets, this will only accept a RoomType. (List of RoomTypes: https://github.com/Exiled-Team/EXILED/blob/master/Exiled.API/Enums/RoomType.cs )")]
+        [Description("房间预设，这将只接受房间类型。 (房间类型列表 https://github.com/Exiled-Team/EXILED/blob/master/Exiled.API/Enums/RoomType.cs )")]
         public Dictionary<string, Preset<RoomType>[]> PerRoom { get; set; } = new Dictionary<string, Preset<RoomType>[]>()
         {
             {

@@ -49,7 +49,7 @@ namespace Lights.Commands
                 {
                     if (Plugin.Instance.Config.Presets.SpecificPermissionsRequired && !sender.CheckPermission(permission))
                     {
-                        response = $"Insufficient permission. Required: {permission}";
+                        response = $"权限不足。必需： {permission}";
                         return false;
                     }
 
@@ -60,17 +60,17 @@ namespace Lights.Commands
                 {
                     if (Plugin.Instance.Config.Presets.SpecificPermissionsRequired && !sender.CheckPermission(permission))
                     {
-                        response = $"Insufficient permission. Required: {permission}";
+                        response = $"权限不足。必需： {permission}";
                         return false;
                     }
 
-                    response = $"Used preset \"{arguments.At(0)}\" successfully.";
+                    response = $"已使用预设 \"{arguments.At(0)}\" 成功.";
                     return true;
                 }
             }
             else if (!sender.CheckPermission("lights.custom"))
             {
-                response = "Insufficient permission. Required: lights.custom";
+                response = "权限不足。必需 lights.custom";
                 return false;
             }
 
@@ -104,7 +104,7 @@ namespace Lights.Commands
                         item.TryExecute(modifierType, duration, rgb);
                     }
 
-                    response = $"Successfully used {modifierType} mode on all rooms of type {roomType}.";
+                    response = $"已成功使用 {modifierType} 所有类型房间的模式 {roomType}.";
                     return true;
                 }
                 else if (Enum.TryParse(arguments.At(0), out ZoneType zoneType))
@@ -117,7 +117,7 @@ namespace Lights.Commands
                         item.TryExecute(modifierType, duration, rgb);
                     }
 
-                    response = $"Successfully used {modifierType} mode on all rooms inside {zoneType}.";
+                    response = $"已在 {zoneType} 内的所有房间上成功使用 {modifierType} 模式.";
                     return true;
                 }
                 else
@@ -128,18 +128,18 @@ namespace Lights.Commands
             }
             else
             {
-                response = $"Could not recognize that mode, type \"{Command}\" for the correct usage.";
+                response = $"无法识别该模式, 输入 \"{Command}\" 了解正确用法.";
                 return false;
             }
         }
 
         private string HelpMessage() =>
-            "<color=#2fb562>Usage:</color>" +
+            "<color=#2fb562>用法:</color>" +
             $"\n  <color=#03b6fc>- \"{Command} <preset ID>\"</color>" +
             $"\n  <color=#03b6fc>- \"{Command} <roomType/zoneType> <duration> <modifierType> [parameters]\"</color>" +
             "\n" +
-            $"\n<color=#2fb562>Modifiers:</color> <color=yellow>{string.Join(", ", Enum.GetNames(typeof(ModifierType)))}</color>" +
-            "\n<color=#a15bc9>Examples:</color>" +
+            $"\n<color=#2fb562>模式调节:</color> <color=yellow>{string.Join(", ", Enum.GetNames(typeof(ModifierType)))}</color>" +
+            "\n<color=#a15bc9>示例：</color>" +
             $"\n  <color=#03b6fc>- \"{Command} Lcz173 8 Color 255 80 255\"</color>" +
             $"\n  <color=#03b6fc>- \"{Command} LightContainment 8 Intensity 0.75\"</color>";
     }

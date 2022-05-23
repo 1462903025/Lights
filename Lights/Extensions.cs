@@ -61,7 +61,7 @@ namespace Lights
                 case ModifierType.Color:
                     if (arguments.Length < 3)
                     {
-                        Log.Error("Missing arguments on preset with Color modifier type.");
+                        Log.Error("具有颜色修改器类型的预设上缺少参数。");
                         return false;
                     }
 
@@ -139,7 +139,7 @@ namespace Lights
 
                         if (!room.TryExecute(preset.Modifier, preset.Duration, preset.Arguments))
                         {
-                            Log.Error($"Couldn't trigger following preset ({key}) on {room.Name} ({room.Type})");
+                            Log.Error($"无法触发以下预设 ({key}) 在 {room.Name} ({room.Type})");
                         }
                     }
                 }
@@ -178,7 +178,7 @@ namespace Lights
 
                         if (!room.TryExecute(preset.Modifier, preset.Duration, preset.Arguments))
                         {
-                            Log.Error($"Couldn't trigger following preset ({key}) on {room.Name} ({room.Type})");
+                            Log.Error($"无法触发以下预设 ({key}) 在 {room.Name} ({room.Type})");
                         }
                     }
                 }
